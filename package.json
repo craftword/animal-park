@@ -1,0 +1,24 @@
+{
+  "name": "animal-park",
+  "version": "1.0.0",
+  "description": "The App is for managing animals and their species in Zoo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craftword/animal-park.git"
+  },
+  "keywords": [
+    "Zoo",
+    "Animals",
+    "species"
+  ],
+  "author": "Abimbola Olaitan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craftword/animal-park/issues"
+  },
+  "homepage": "https://github.com/craftword/animal-park#readme"
+}
