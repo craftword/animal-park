@@ -3,8 +3,8 @@
     {
       "name": "Abimbola Olaitan",
       "email": "craftwordltd@gmail.com",
-      "password":"godword20",
-      "role":"admin",
+      "password": "godword20",
+      "role": "admin",
       "id": 1
     }
   ],
@@ -17,6 +17,14 @@
       "species": "",
       "likes": 0,
       "id": 1
+    },
+    {
+      "name": "Woodhoopoe, Green",
+      "scientificname": "Phoeniculus purpureus",
+      "description": "sgdhd dhhdghgdg gdgdgdgdggdggdgdb bdnndndnndn",
+      "species": "sgdhd dhhdghgdg gdgdgdgdggdggdgdb bdnndndnndn",
+      "likes": "0",
+      "id": 2
     }
   ],
   "species": [

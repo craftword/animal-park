@@ -92,22 +92,22 @@
             <div class="row">             
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name">
+                        <input type="text" class="form-control" placeholder="Name" id="name">
                     </div>
                 </div>
                 <div class="col-xs-6">
                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Scientific Name">
+                      <input type="text" class="form-control" placeholder="Scientific Name" id="science">
                     </div>
                 </div>              
                 <div class="col-xs-12">
                     <div class="form-group">
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="description"></textarea>
+                      <textarea class="form-control" id="textarea1" rows="3" placeholder="description"></textarea>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <select class="form-control">
+                        <select class="form-control" id="species">
                             <option>Mammalia</option>
                             <option>Aves</option>
                             <option>Amphibia</option>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Image Url ">
+                        <input type="text" class="form-control" placeholder="Image Url" id="image">
                     </div>
                 </div>
              
@@ -127,7 +127,7 @@
         
       </div>
       <div class="modal-footer">
-         <button type="button" class="btn btn-primary" id="target">Create</button>
+         <button type="button" class="btn btn-primary" id="create">Create</button>
       </div>
     </div>
   </div>
@@ -160,12 +160,27 @@ $.ajax({
  });	
 
 
-   $( "#target" ).on('click', function(){
-        var file_data = $('#image').prop('files')[0];
-        console.log(file_data);
-        var form_data = new FormData();
-        form_data.append('file', file_data);
-        console.log(form_data);
+   $( "#create" ).on('click', function(){
+      var formData = {
+            'name'              : $('#name').val(),
+            'scientificname'    : $('#science').val(),
+            'description'    : $('#textarea1').val(),
+            'species'    : $('#species').val(),
+            'likes'    : 0,
+        };
+      $.ajax({	
+              
+	  url:' http://localhost:3000/animals',
+	  type:'POST',
+      data:formData,
+	  dataType: 'json',
+	  success:function(data) {
+          console.log(data);
+          window.reload;
+          
+	}				
+ }); 
+       
     });
 
   
