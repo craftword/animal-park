@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "name": "Abimbola Olaitan",
+      "email": "craftwordltd@gmail.com",
+      "password":"godword20",
+      "role":"admin",
+      "id": 1
+    }
+  ],
+  "animals": [
+    {
+      "name": "Tiger, Amur (Siberian)",
+      "scientific name": "Panthera tigris altaica",
+      "description": "English is a Lion",
+      "image": "",
+      "likes": 0,
+      "id": 1
+    }
+  ],
+  "species": [
+    {
+      "id": 1,
+      "name": "Mammalia"
+    }
+  ]
+}
