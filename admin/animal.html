@@ -55,27 +55,16 @@
                     <tr>
                         <th>Name</th>
                         <th>Scientific Name</th>
-                        <th>No likes</th>                                           
+                        <th>Species</th>
+                        <th>likes</th>                                           
                         <th>&nbsp;</th>
                         
 
                     </tr>
                 </thead>                 
                 
-                <tbody>
-                   <tr>
-                       <td>er</td>
-                       <td>tr</td>
-                       <td>ff</td>
-                       <td>we</td>
-                   </tr>
-                   <tr>
-                       <td>er</td>
-                       <td>tr</td>
-                       <td>ff</td>
-                       <td>gh</td>
-                       
-                   </tr>
+                <tbody id='animalTable'>
+                   
                 </tbody>
             </table>
         </div>
@@ -93,17 +82,52 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Create Animal</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+          <form >
+            <div class="row">             
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                   <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Scientific Name">
+                    </div>
+                </div>              
+                <div class="col-xs-12">
+                    <div class="form-group">
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="description"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option>Mammalia</option>
+                            <option>Aves</option>
+                            <option>Amphibia</option>
+                            <option>Reptilia</option>
+                            <option>Fish</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Image Url ">
+                    </div>
+                </div>
+             
+            </div>
+        </form>
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Create</button>
+         <button type="button" class="btn btn-primary" id="target">Create</button>
       </div>
     </div>
   </div>
@@ -114,5 +138,44 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+
+<script>
+$(document).ready(function(){
+// upload data in table
+$.ajax({	
+              
+	  url:' http://localhost:3000/animals',
+	  method: 'GET',
+	  dataType: 'json',
+	  success:function(data) {
+          console.log(data);
+          data.forEach(function(currentValue, index){
+               var txt = "<tr><td>"+currentValue.name+"</td><td>"+currentValue.scientificname+"</td><td>"+currentValue.species+"</td><td>"+currentValue.likes+"</td><td><a href='"+currentValue.id+"' class='btn btn-xs btn-danger'>view</a>  <a href='"+currentValue.id+"' class='btn btn-xs btn-warning'>Edit</a> <a href='"+currentValue.id+"' class='btn btn-xs btn-info'>Delete</a></td></tr>";
+                
+               $('#animalTable').append(txt);
+               console.log(currentValue);
+        
+       });
+	}				
+ });	
+
+
+   $( "#target" ).on('click', function(){
+        var file_data = $('#image').prop('files')[0];
+        console.log(file_data);
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+        console.log(form_data);
+    });
+
+  
+
+
+
+ });
+
+</script>
+
+
 </body>
 </html>
