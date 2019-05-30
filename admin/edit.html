@@ -94,7 +94,10 @@ $(document).ready(function(){
                   
               
         
-        }				
+        },
+        error: function(){
+               alert('something went wrong'); 
+            }				
     });	
     
     $("#update").on('click', function(){
@@ -119,6 +122,9 @@ $(document).ready(function(){
                     console.log(data);
                     location.reload();
                     
+            },
+            error: function(){
+               alert('something went wrong'); 
             }				
             }); 
           

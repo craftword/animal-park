@@ -156,7 +156,10 @@ $.ajax({
                console.log(currentValue);
         
        });
-	}				
+	},
+  error: function(){
+    alert('something went wrong'); 
+   }
  });	
 
 
@@ -179,7 +182,10 @@ $.ajax({
                 $('#animalModal').modal('hide')
                 location.reload();
                 
-          }				
+          },
+          error: function(){
+               alert('something went wrong'); 
+            }				
         }); 
        
       });
@@ -199,6 +205,9 @@ $.ajax({
             success : function(data){
                 alert('deleted successfully');
                 location.reload(true);
+            },
+            error: function(){
+               alert('something went wrong'); 
             }
         });
     }); 
