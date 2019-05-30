@@ -10,15 +10,6 @@
   ],
   "animals": [
     {
-      "name": "Tiger, Amur (Siberian)",
-      "scientificname": "Panthera tigris altaica",
-      "description": "English is a Lion",
-      "image": "",
-      "species": "",
-      "likes": 0,
-      "id": 1
-    },
-    {
       "name": "Woodhoopoe, Green",
       "scientificname": "Phoeniculus purpureus",
       "description": "A Tiger with Lion 4.5 ft tall, 120kg with long canine",
@@ -26,6 +17,14 @@
       "image": "ydyydydyydtdyydtdtdtdtttd",
       "likes": 0,
       "id": 2
+    },
+    {
+      "name": "Boa, Jamaican",
+      "scientificname": "Chilabothrus subflavus",
+      "description": "A python snake that is 20 ft",
+      "species": "Reptilia",
+      "likes": "0",
+      "id": 3
     }
   ],
   "species": [

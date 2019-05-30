@@ -82,7 +82,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create Animal</h5>
+        <h5 class="modal-title" id="animalModal">Create Animal</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -150,7 +150,7 @@ $.ajax({
 	  success:function(data) {
           console.log(data);
           data.forEach(function(currentValue, index){
-               var txt = "<tr><td>"+currentValue.name+"</td><td>"+currentValue.scientificname+"</td><td>"+currentValue.species+"</td><td>"+currentValue.likes+"</td><td><a href='view.html?"+currentValue.id+"' class='btn btn-xs btn-danger'>view</a>  <a href='edit.html?"+currentValue.id+"' class='btn btn-xs btn-warning'>Edit</a> <a href='#' class='btn btn-xs btn-info'>Delete</a></td></tr>";
+               var txt = "<tr><td>"+currentValue.name+"</td><td>"+currentValue.scientificname+"</td><td>"+currentValue.species+"</td><td>"+currentValue.likes+"</td><td><a href='view.html?"+currentValue.id+"' class='btn btn-xs btn-danger'>view</a>  <a href='edit.html?"+currentValue.id+"' class='btn btn-xs btn-warning'>Edit</a> <a href='#' class='btn btn-xs btn-info' name='"+currentValue.id+"'>Delete</a></td></tr>";
                 
                $('#animalTable').append(txt);
                console.log(currentValue);
@@ -176,18 +176,32 @@ $.ajax({
           dataType: 'json',
           success:function(data) {
                 console.log(data);
-                window.reload;
+                $('#animalModal').modal('hide')
+                location.reload();
                 
           }				
         }); 
        
       });
 
-  
-
-
+   
 
  });
+
+ $(document).on("click", '.btn-info', function(event){
+        event.preventDefault();
+        confirm('Are You Sure You Want Delete It');
+        var id = $(this).attr("name");
+        console.log(id );
+        $.ajax({
+            url: '  http://localhost:3000/animals/'+id,
+            type:'DELETE',
+            success : function(data){
+                alert('deleted successfully');
+                location.reload(true);
+            }
+        });
+    }); 
 
 </script>
 
