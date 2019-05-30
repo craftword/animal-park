@@ -42,7 +42,7 @@
        
      <div class="panel panel-default">
         <div class="panel-heading">
-            Animal Detail Page
+            Animal Edit Page
         </div>
         <div class="panel-body">
             <div class="row details">            
@@ -50,8 +50,11 @@
                 
 
                     
-                </div>
             </div>
+            <div class="row"> 
+              <div class='col-xs-2 '><div class='form-group'><button type='button' class='btn btn-success' id='update'>Update</button></div></div>
+            </div>
+        </div>
             
         </div>
     </div>
@@ -82,10 +85,10 @@ $(document).ready(function(){
             console.log(data);
                   var txt = "<div class='col-xs-6'><div class='form-group'><input type='text' class='form-control' id='name' value='"+data.name+"'></div></div>";
                     txt += "<div class='col-xs-6'><div class='form-group'><input type='text' class='form-control' id='science' value='"+data.scientificname+"'></div></div>";              
-                    txt +="<div class='col-xs-12'><div class='form-group'><textarea class='form-control' id='textarea1' rows='3' value='"+data.description+"'></textarea></div></div>";
-                    txt +="<div class='col-xs-6'><div class='form-group'><select class='form-control' id='species'><option>Mammalia</option><option>Aves</option><option>Amphibia</option><option>Reptilia</option><option>Fish</option></select></div></div>";
+                    txt +="<div class='col-xs-12'><div class='form-group'><textarea class='form-control' id='textarea1' rows='3'>"+data.description+"</textarea></div></div>";
+                    txt +="<div class='col-xs-6'><div class='form-group'><select class='form-control' id='species' value='"+data.speciess+"'><option>Mammalia</option><option>Aves</option><option>Amphibia</option><option>Reptilia</option><option>Fish</option></select></div></div>";
                     txt +="<div class='col-xs-6'><div class='form-group'><input type='text' class='form-control' id='image' value='"+data.image+"'></div></div>";
-                  
+                    
                     
                   $('.details').append(txt);
                   
@@ -93,12 +96,37 @@ $(document).ready(function(){
         
         }				
     });	
-
-
+    
+    $("#update").on('click', function(){
+        
+        
+        var formData = {
+                'name'              : $('#name').val(),
+                'scientificname'    : $('#science').val(),
+                'description'    : $('#textarea1').val(),
+                'species'    : $('#species').val(),
+                'image'    : $('#image').val(),
+                
+            };
+        console.log(formData);    
+        $.ajax({	
+                
+            url:' http://localhost:3000/animals/'+ query,
+            type:'PATCH',
+            data:formData,
+            dataType: 'json',
+            success:function(data) {
+                    console.log(data);
+                    location.reload();
+                    
+            }				
+            }); 
+          
+        });
   
+});
 
-
- });
+ 
 
 </script>
 

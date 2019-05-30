@@ -150,7 +150,7 @@ $.ajax({
 	  success:function(data) {
           console.log(data);
           data.forEach(function(currentValue, index){
-               var txt = "<tr><td>"+currentValue.name+"</td><td>"+currentValue.scientificname+"</td><td>"+currentValue.species+"</td><td>"+currentValue.likes+"</td><td><a href='view.html?"+currentValue.id+"' class='btn btn-xs btn-danger'>view</a>  <a href='"+currentValue.id+"' class='btn btn-xs btn-warning'>Edit</a> <a href='"+currentValue.id+"' class='btn btn-xs btn-info'>Delete</a></td></tr>";
+               var txt = "<tr><td>"+currentValue.name+"</td><td>"+currentValue.scientificname+"</td><td>"+currentValue.species+"</td><td>"+currentValue.likes+"</td><td><a href='view.html?"+currentValue.id+"' class='btn btn-xs btn-danger'>view</a>  <a href='edit.html?"+currentValue.id+"' class='btn btn-xs btn-warning'>Edit</a> <a href='#' class='btn btn-xs btn-info'>Delete</a></td></tr>";
                 
                $('#animalTable').append(txt);
                console.log(currentValue);
@@ -160,7 +160,7 @@ $.ajax({
  });	
 
 
-   $( "#create" ).on('click', function(){
+   $("#create").on('click', function(){
       var formData = {
             'name'              : $('#name').val(),
             'scientificname'    : $('#science').val(),
@@ -170,18 +170,18 @@ $.ajax({
         };
       $.ajax({	
               
-	  url:' http://localhost:3000/animals',
-	  type:'POST',
-      data:formData,
-	  dataType: 'json',
-	  success:function(data) {
-          console.log(data);
-          window.reload;
-          
-	}				
- }); 
+          url:' http://localhost:3000/animals',
+          type:'POST',
+            data:formData,
+          dataType: 'json',
+          success:function(data) {
+                console.log(data);
+                window.reload;
+                
+          }				
+        }); 
        
-    });
+      });
 
   
 
