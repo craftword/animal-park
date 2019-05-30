@@ -4,8 +4,17 @@
       "name": "Abimbola Olaitan",
       "email": "craftwordltd@gmail.com",
       "password": "godword20",
+      "phone": "08027313450",
       "role": "admin",
       "id": 1
+    },
+    {
+      "name": "Christy Olaitan",
+      "email": "craftlinkinc@yahoo.com",
+      "password": "wick@123",
+      "phone": "08033655089",
+      "role": "user",
+      "id": 2
     }
   ],
   "animals": [

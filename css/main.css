@@ -1,4 +1,34 @@
+.bkgrd {
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
+      
+}
+.logo {
+   margin-top: 6px;
+   margin-bottom: 50px;
+}
 
+.head {
+    font-family:"Berlin San FB";
+    font-size: 50px;
+    font-weight:bold;
+    color: #000000; 
+}
+.moto {
+   font-family:"Monotype Corsiva";
+    font-size: 30px;
+    text-shadow: 1px 1px #669d35;
+    color: #fff;  
+}
+
+    
+    
+    
+    
+    
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
