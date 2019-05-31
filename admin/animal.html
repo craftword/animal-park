@@ -1,3 +1,11 @@
+<script>
+  var obj = JSON.parse(localStorage.getItem("data"));
+  console.log(obj);
+   if (!obj) {  
+    window.location.href='../index.html';
+    
+  }
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +30,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+        <li><h4>
+          <script>
+              document.write(obj.name);
+          </script>
+          </h4> 
+        </li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
@@ -39,10 +53,15 @@
      <div class="col-sm-10 text-left"> 
         <h3>Animal Section </h3>
         <hr />
+      
        <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addnewanimal">
-  Add New Animal 
-</button>
+       <script>
+         if(obj.role === 'admin') {
+            let element = '<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addnewanimal">Add New Animal</button>';
+            document.write(element);
+         }
+      
+      </script>
         <p> </p>
      <div class="panel panel-default">
         <div class="panel-heading">

@@ -108,7 +108,8 @@ $.ajax({
 	  success:function(data) {
           console.log(data);
           data.forEach(function(currentValue, index){
-               var txt = "<tr><td>"+currentValue.name+"</td><td>"+currentValue.scientificname+"</td><td>"+currentValue.species+"</td><td>"+currentValue.likes+"</td><td><a href='view.html?"+currentValue.id+"' class='btn btn-xs btn-danger'>view</a>  <a href='edit.html?"+currentValue.id+"' class='btn btn-xs btn-warning'>Edit</a> <a href='#' class='btn btn-xs btn-info' name='"+currentValue.id+"'>Delete</a></td></tr>";
+               var txt = "<tr><td>"+currentValue.name+"</td><td>"+currentValue.scientificname+"</td><td>"+currentValue.species+"</td><td>"+currentValue.likes+"</td><td><a href='view.html?"+currentValue.id+"' class='btn btn-xs btn-danger'>view</a>";  
+               txt += (obj.role === 'admin' ? "<a href='edit.html?"+currentValue.id+"' class='btn btn-xs btn-warning'>Edit</a> <a href='#' class='btn btn-xs btn-info' name='"+currentValue.id+"'>Delete</a></td></tr>":"");
                 
                $('#animalTable').append(txt);
                console.log(currentValue);
