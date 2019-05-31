@@ -108,7 +108,7 @@ $.ajax({
 	  success:function(data) {
           console.log(data);
           data.forEach(function(currentValue, index){
-               var txt = "<tr><td>"+currentValue.name+"</td><td>"+currentValue.scientificname+"</td><td>"+currentValue.species+"</td><td>"+currentValue.likes+"</td><td><a href='view.html?"+currentValue.id+"' class='btn btn-xs btn-danger'>view</a>";  
+               var txt = "<tr><td>"+currentValue.name+"</td><td>"+currentValue.scientificname+"</td><td>"+currentValue.species+"</td><td>"+currentValue.likes+"</td><td><a href='view.html?"+currentValue.id+"' class='btn btn-xs btn-danger'>view</a> ";  
                txt += (obj.role === 'admin' ? "<a href='edit.html?"+currentValue.id+"' class='btn btn-xs btn-warning'>Edit</a> <a href='#' class='btn btn-xs btn-info' name='"+currentValue.id+"'>Delete</a></td></tr>":"");
                 
                $('#animalTable').append(txt);
@@ -249,8 +249,9 @@ $(document).ready(function(){
 //DELETE AN ANIMALS
  $(document).on("click", '.btn-info', function(event){
         event.preventDefault();
-        confirm('Are You Sure You Want Delete It');
-        var id = $(this).attr("name");
+        let checkConfirm = confirm('Are You Sure You Want Delete It');
+        if(checkConfirm == true) {
+             var id = $(this).attr("name");
         console.log(id );
         $.ajax({
             url: '  http://localhost:3000/animals/'+id,
@@ -263,6 +264,10 @@ $(document).ready(function(){
                alert('something went wrong'); 
             }
         });
+        } else {
+            location.reload(true);
+        }
+       
     }); 
 
 

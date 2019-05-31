@@ -35,15 +35,6 @@
   ],
   "animals": [
     {
-      "name": "Woodhoopoe, Green",
-      "scientificname": "Phoeniculus purpureus",
-      "description": "A Tiger with Lion 4.5 ft tall, 120kg with long canine",
-      "species": "Mammalia",
-      "image": "ydyydydyydtdyydtdtdtdtttd",
-      "likes": 0,
-      "id": 2
-    },
-    {
       "name": "Boa, Jamaican",
       "scientificname": "Chilabothrus subflavus",
       "description": "A python snake that is 20 ft",
@@ -59,11 +50,6 @@
       "likes": "0",
       "id": 4
     }
-  ],
-  "species": [
-    {
-      "id": 1,
-      "name": "Mammalia"
-    }
   ]
+  
 }
