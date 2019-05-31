@@ -169,7 +169,7 @@ $(document).ready(function(){
                   var txt = "<div class='col-xs-6'><div class='form-group'><input type='text' class='form-control' id='name' value='"+data.name+"'></div></div>";
                     txt += "<div class='col-xs-6'><div class='form-group'><input type='text' class='form-control' id='science' value='"+data.scientificname+"'></div></div>";              
                     txt +="<div class='col-xs-12'><div class='form-group'><textarea class='form-control' id='textarea1' rows='3'>"+data.description+"</textarea></div></div>";
-                    txt +="<div class='col-xs-6'><div class='form-group'><select class='form-control' id='species' value='"+data.speciess+"'><option>Mammalia</option><option>Aves</option><option>Amphibia</option><option>Reptilia</option><option>Fish</option></select></div></div>";
+                    txt +="<div class='col-xs-6'><div class='form-group'><select class='form-control' id='species' value='"+data.species+"'><option>Mammalia</option><option>Aves</option><option>Amphibia</option><option>Reptilia</option><option>Fish</option></select></div></div>";
                     txt +="<div class='col-xs-6'><div class='form-group'><input type='text' class='form-control' id='image' value='"+data.image+"'></div></div>";
                     
                     
@@ -227,8 +227,9 @@ $(document).ready(function(){
         success:function(data) {
             console.log(data);
                   var txt = "<div class='col-sm-6 text-left'><h2>"+data.name+"</h2><i>"+data.scientificname+"</i> <br />";
-                  txt += "<h5><strong> Description:</strong> </h5>"+data.description+"<h6><strong> Species: </strong></h6>"+data.species+"<h6><strong> Likes: </strong></h6>"+data.likes+"</div>";
-                  txt += "<div class='col-sm-6'><img src='"+data.image+"' alt='"+data.name+"' class='rounded-0'></div>";   
+                  txt += "<h5><strong> Description:</strong> </h5>"+data.description+"<h6><strong> Species: </strong></h6>"+data.species+"<br />";
+                  txt += "<h6><label name='"+data.likes+"'><strong>Likes: </strong></label></h6>"+data.likes+"  <button class='btn btn-xs btn-danger' id='likes' name='"+data.id+"'>Like</button></div>";
+                  txt += "<div class='col-sm-6'><img class='thumbnail img-responsive' src='"+data.image+"' alt='"+data.name+"' class='rounded-0'></div>";   
                     
                   $('.viewDetails').append(txt);
                   
@@ -238,13 +239,37 @@ $(document).ready(function(){
         error: function(){
                alert('something went wrong'); 
             }				
-    });	
-
-
-  
-
-
+    });  
  });
+ 
+ //likes
+    $(document).on("click", '#likes', function(event){
+        event.preventDefault();
+        let id = $(this).attr("name");
+        let likes = $('label').attr("name");
+        ++likes
+        let data = {
+            "likes":likes
+        } 
+        $.ajax({	
+                
+            url:' http://localhost:3000/animals/'+ id,
+            type:'PATCH',
+            data:data,
+            dataType: 'json',
+            success:function(data) {
+                location.reload();
+                    
+            },
+            error: function(){
+               alert('something went wrong'); 
+            }				
+        }); 
+          
+        
+
+        
+    });
 
 //DELETE AN ANIMALS
  $(document).on("click", '.btn-info', function(event){
@@ -252,7 +277,7 @@ $(document).ready(function(){
         let checkConfirm = confirm('Are You Sure You Want Delete It');
         if(checkConfirm == true) {
              var id = $(this).attr("name");
-        console.log(id );
+        
         $.ajax({
             url: '  http://localhost:3000/animals/'+id,
             type:'DELETE',

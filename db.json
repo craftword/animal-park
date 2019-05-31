@@ -37,19 +37,20 @@
     {
       "name": "Boa, Jamaican",
       "scientificname": "Chilabothrus subflavus",
-      "description": "A python snake that is 20 ft",
+      "description": "\nThere are so many species of animals in the world. The entire animal world may be classified into five types. They are amphibians, reptiles, mammals, birds, and insects. The animals that live both on land and in water have moist skin and no scales on body are called amphibians",
       "species": "Reptilia",
-      "likes": "0",
+      "image": "https://i.ibb.co/hKSfpy8/boa.jpg",
+      "likes": "2",
       "id": 3
     },
     {
       "name": "Frog, Dusky Gopher",
       "scientificname": "Lithobates (Rana) sevosa",
-      "description": "A frog that has poisonous gland ",
+      "description": "There are so many species of animals in the world. The entire animal world may be classified into five types. They are amphibians, reptiles, mammals, birds, and insects. The animals that live both on land and in water have moist skin and no scales on body are called amphibians",
       "species": "Amphibia",
-      "likes": "0",
+      "image": "https://i.ibb.co/J5Xz8xm/frog.jpg",
+      "likes": "1",
       "id": 4
     }
   ]
-  
 }
