@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Animal Park</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="icon" type="image/png" href="img/icon.jpg"/>   
+  </head>
+  <body class="bkgrd">
+    <div class="container-fluid">
+        <div class="clearfix hidden-sm-up"></div> 
+        <div class="row justify-content-center ">
+            <div class="col-8 offset-md-2 head">
+                ANIMAL PARK
+            </div>                        
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-8 offset-md-2 moto">
+                WILDLIFE AND RESTORT
+            </div>                        
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-3">
+                 <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#mySignUp">
+                    Subscribe
+                </button>            </div>
+            <div class="col-3">              
+                <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#mySignIn">
+                    SignIn
+                </button>
+            </div>                       
+        </div>
+    </div>
+
+     <!-- Subscribe Modal -->
+    <div class="modal fade" id="mySignUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">REGISTRATION</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="fullname">Fullname</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter fullname">
+                        </div>                        
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone">
+                        </div>
+                        <div class="col-md-10 offset-md-1">
+                            <button id='signup' class="btn btn-success btn-lg btn-block">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="mySignIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
+                       </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password1" placeholder="Password">
+                        </div>
+                        <div class="col-md-10 offset-md-1">
+                            <button class="btn btn-success btn-lg btn-block" id='signin'>Submit</button>
+                        </div>
+                    </form>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+   
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="js/main.js">  </script>
+  
+  </body>
+</html>

@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "name": "Abimbola Olaitan",
+      "email": "craftwordltd@gmail.com",
+      "password": "godword20",
+      "phone": "08027313450",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "name": "Christy Olaitan",
+      "email": "craftlinkinc@yahoo.com",
+      "password": "wick@123",
+      "phone": "08033655089",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "name": "Bola Munis",
+      "email": "git@yahoo.com",
+      "password": "giit@27",
+      "phone": "08033655089",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "name": "Shola Holla",
+      "email": "shola@yahoo.com",
+      "password": "sholly",
+      "phone": "080333711045",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "name": "gaxagxfaxa",
+      "email": "addd@ffxfz.co",
+      "password": "xsdwdgw",
+      "phone": "986754345688",
+      "role": "user",
+      "id": 5
+    }
+  ],
+  "animals": [
+    {
+      "name": "Boa, Jamaican",
+      "scientificname": "Chilabothrus subflavus",
+      "description": "\nThere are so many species of animals in the world. The entire animal world may be classified into five types. They are amphibians, reptiles, mammals, birds, and insects. The animals that live both on land and in water have moist skin and no scales on body are called amphibians",
+      "species": "Reptilia",
+      "image": "https://i.ibb.co/hKSfpy8/boa.jpg",
+      "likes": "2",
+      "id": 3
+    },
+    {
+      "name": "Frog, Dusky Gopher",
+      "scientificname": "Lithobates (Rana) sevosa",
+      "description": "There are so many species of animals in the world. The entire animal world may be classified into five types. They are amphibians, reptiles, mammals, birds, and insects. The animals that live both on land and in water have moist skin and no scales on body are called amphibians",
+      "species": "Amphibia",
+      "image": "https://i.ibb.co/J5Xz8xm/frog.jpg",
+      "likes": "1",
+      "id": 4
+    },
+    {
+      "name": "Gorilla, Western Lowland",
+      "scientificname": "Gorilla gorilla gorilla",
+      "description": "\nThere are so many species of animals in the world. The entire animal world may be classified into five types. They are amphibians, reptiles, mammals, birds, and insects. The animals that live both on land and in water have moist skin and no scales on body are called amphibians",
+      "species": "Mammalia",
+      "image": "https://i.ibb.co/Bgz63vB/gorilla.jpg",
+      "likes": "1",
+      "id": 5
+    },
+    {
+      "name": "Parrot, Hawk-headed",
+      "scientificname": "Deroptyus accipitrinus",
+      "description": "There are so many species of animals in the world. The entire animal world may be classified into five types. They are amphibians, reptiles, mammals, birds, and insects. The animals that live both on land and in water have moist skin and no scales on body are called amphibians",
+      "species": "Aves",
+      "image": "https://i.ibb.co/Wfb5ky3/parrot.jpg",
+      "likes": "1",
+      "id": 6
+    }
+  ]
+}

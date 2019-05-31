@@ -1,0 +1,69 @@
+<script>
+  var obj = JSON.parse(localStorage.getItem("data"));
+  console.log(obj);
+   if (!obj) {  
+    window.location.href='../index.html';
+    
+  }
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Animal Park</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+  
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Animal Park</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><h4>
+          <script>
+              document.write(obj.name);
+          </script>
+          </h4> 
+        </li>
+        <li><a href="#" id="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="dashboard.html">Dashboard</a></p>
+      <p><a href="animal.html">Animal</a></p>
+      
+      
+    </div>
+     <div class="col-sm-10 text-center"> 
+        <h2>Welcome To Animal Park </h2>
+        <img src="../images/dash.PNG" />
+        
+     </div>
+ </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Decagon&copy;2019</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <script src="../js/main.js">  </script>
+</body>
+</html>
