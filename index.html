@@ -92,14 +92,14 @@
                     <form>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
                        </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" id="password1" placeholder="Password">
                         </div>
                         <div class="col-md-10 offset-md-1">
-                            <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+                            <button class="btn btn-success btn-lg btn-block" id='signin'>Submit</button>
                         </div>
                     </form>
                 </div>
@@ -114,7 +114,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script>
     // Sign Ups
-
     $("#signup").on('click', function(e){
         e.preventDefault();
     
@@ -137,6 +136,8 @@
           dataType: 'json',
           success:function(data) {
                 console.log(data);
+                let obj = {"id":data.id, 'name':data.name, 'role':data.role}
+                localStorage.setItem("data", JSON.stringify(obj));
                 window.location.href='admin/dashboard.html';
                 
           },
@@ -146,7 +147,55 @@
         }); 
        
       });
+  // Sign In
+   
+      $("#signin").on('click', function(e){
+        e.preventDefault();
+       var formData = {
+            'email'  : $('#email1').val(),
+            'password': $('#password1').val()           
+            
+        };
+        
+         $.ajax({	
+                
+        url:'http://localhost:3000/users',
+        method: 'GET',
+        dataType: 'json',
+        success:function(data) {
+                             
+             let count = 0; 
+            data.forEach(function(currentValue, index){
+               if(currentValue.email === formData.email && currentValue.password === formData.password ) {
+                   let obj = {"id":currentValue.id, 'name':currentValue.name, 'role':currentValue.role}
+                   localStorage.setItem("data", JSON.stringify(obj));
+                   ++count;                    
+               }                            
+               
+            });
+            console.log(count); 
+            if(count > 0) {                
+                console.log(count);
+                //alert("welcome");
+                window.location.replace('admin/dashboard.html');
+            } else {
 
+                //window.location.reload();
+                console.log('err');
+
+            }
+               
+               
+            
+        
+        },
+        error: function(){
+               alert('something went wrong'); 
+            }				
+    });	
+
+
+    });
     </script>
   
   </body>
