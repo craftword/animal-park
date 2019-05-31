@@ -15,6 +15,22 @@
       "phone": "08033655089",
       "role": "user",
       "id": 2
+    },
+    {
+      "name": "Bola Munis",
+      "email": "git@yahoo.com",
+      "password": "giit@27",
+      "phone": "08033655089",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "name": "Shola Holla",
+      "email": "shola@yahoo.com",
+      "password": "sholly",
+      "phone": "080333711045",
+      "role": "user",
+      "id": 4
     }
   ],
   "animals": [
@@ -34,6 +50,14 @@
       "species": "Reptilia",
       "likes": "0",
       "id": 3
+    },
+    {
+      "name": "Frog, Dusky Gopher",
+      "scientificname": "Lithobates (Rana) sevosa",
+      "description": "A frog that has poisonous gland ",
+      "species": "Amphibia",
+      "likes": "0",
+      "id": 4
     }
   ],
   "species": [

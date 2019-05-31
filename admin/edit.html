@@ -71,70 +71,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../js/main.js">  </script>
 
-<script>
-$(document).ready(function(){    
- var query = window.location.search.substring(1);
-  console.log(query);
-    $.ajax({	
-                
-        url:' http://localhost:3000/animals/'+ query,
-        method: 'GET',
-        dataType: 'json',
-        success:function(data) {
-            console.log(data);
-                  var txt = "<div class='col-xs-6'><div class='form-group'><input type='text' class='form-control' id='name' value='"+data.name+"'></div></div>";
-                    txt += "<div class='col-xs-6'><div class='form-group'><input type='text' class='form-control' id='science' value='"+data.scientificname+"'></div></div>";              
-                    txt +="<div class='col-xs-12'><div class='form-group'><textarea class='form-control' id='textarea1' rows='3'>"+data.description+"</textarea></div></div>";
-                    txt +="<div class='col-xs-6'><div class='form-group'><select class='form-control' id='species' value='"+data.speciess+"'><option>Mammalia</option><option>Aves</option><option>Amphibia</option><option>Reptilia</option><option>Fish</option></select></div></div>";
-                    txt +="<div class='col-xs-6'><div class='form-group'><input type='text' class='form-control' id='image' value='"+data.image+"'></div></div>";
-                    
-                    
-                  $('.details').append(txt);
-                  
-              
-        
-        },
-        error: function(){
-               alert('something went wrong'); 
-            }				
-    });	
-    
-    $("#update").on('click', function(){
-        
-        
-        var formData = {
-                'name'              : $('#name').val(),
-                'scientificname'    : $('#science').val(),
-                'description'    : $('#textarea1').val(),
-                'species'    : $('#species').val(),
-                'image'    : $('#image').val(),
-                
-            };
-        console.log(formData);    
-        $.ajax({	
-                
-            url:' http://localhost:3000/animals/'+ query,
-            type:'PATCH',
-            data:formData,
-            dataType: 'json',
-            success:function(data) {
-                    console.log(data);
-                    location.reload();
-                    
-            },
-            error: function(){
-               alert('something went wrong'); 
-            }				
-            }); 
-          
-        });
-  
-});
-
- 
-
-</script>
 
 
 </body>
