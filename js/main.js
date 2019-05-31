@@ -128,6 +128,7 @@ $.ajax({
             'scientificname'    : $('#science').val(),
             'description'    : $('#textarea1').val(),
             'species'    : $('#species').val(),
+            'image'    : $('#image').val(),
             'likes'    : 0,
         };
       $.ajax({	
