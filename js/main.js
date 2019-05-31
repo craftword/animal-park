@@ -66,7 +66,7 @@ $("#signup").on('click', function(e){
                 window.location.replace('admin/dashboard.html');
             } else {
 
-                //window.location.reload();
+                window.location.reload();
                 console.log('err');
 
             }

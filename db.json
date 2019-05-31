@@ -31,6 +31,14 @@
       "phone": "080333711045",
       "role": "user",
       "id": 4
+    },
+    {
+      "name": "gaxagxfaxa",
+      "email": "addd@ffxfz.co",
+      "password": "xsdwdgw",
+      "phone": "986754345688",
+      "role": "user",
+      "id": 5
     }
   ],
   "animals": [
@@ -51,6 +59,14 @@
       "image": "https://i.ibb.co/J5Xz8xm/frog.jpg",
       "likes": "1",
       "id": 4
+    },
+    {
+      "name": "Gorilla, Western Lowland",
+      "scientificname": "Gorilla gorilla gorilla",
+      "description": "\nThere are so many species of animals in the world. The entire animal world may be classified into five types. They are amphibians, reptiles, mammals, birds, and insects. The animals that live both on land and in water have moist skin and no scales on body are called amphibians",
+      "species": "Mammalia",
+      "likes": "0",
+      "id": 5
     }
   ]
 }
